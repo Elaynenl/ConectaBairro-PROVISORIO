@@ -7,17 +7,6 @@ Com esse propósito, criamos a API que atenderá ao Web Site **ConectaBairro**, 
 - **API ViaCep**: utilizada para melhorar a experiência do usuário no preenchimento de endereços, tanto no cadastro quanto na busca por empreendimentos.
 - **API OpenWeatherMap**: fornece informações sobre clima e umidade da cidade pesquisada. A integração com essa API foi pensada visando a escalabilidade do projeto, pois futuramente, ao atender também a um front-end, permitirá exibir essas informações diretamente aos usuários quando acessarem a página.
 
-
-## 1. Visão Geral
-
-Muitas vezes nos deslocamos por grandes distâncias em busca de um serviço ou produto que estamos precisando. No entanto, na maioria das vezes, ali pertinho — ou mesmo um pouco mais longe, mas ainda dentro do mesmo bairro — há alguém que oferece exatamente aquilo que procuramos, seja um serviço ou um produto.
-<br>
-
-Pensando nisso, idealizamos o ConectaBairro, que tem como objetivo simplificar a forma como os moradores encontram serviços e empreendimentos locais. A proposta promove a economia colaborativa e ajuda pequenos empreendedores — e até mesmo pequenas empresas — a conquistarem maior visibilidade junto aos moradores da região onde estão localizados.
-<br>
-
-A ideia resgata a função que, antigamente, era desempenhada pelos "jornalzinhos de bairro", agora em formato digital e com acesso via web. Empresas e empreendedores podem cadastrar seus empreendimentos para divulgar seus serviços e produtos, enquanto usuários comuns podem consultar opções próximas de forma fácil e eficiente — evitando deslocamentos desnecessários e fortalecendo a economia local.
-
 ---
 
 ## 📋 Sumário
@@ -34,6 +23,18 @@ A ideia resgata a função que, antigamente, era desempenhada pelos "jornalzinho
 10. [Contribuindo](#10-contribuindo)  
 11. [Licença](#11-licença) 
 
+
+---
+
+## 1. Visão Geral
+
+Muitas vezes nos deslocamos por grandes distâncias em busca de um serviço ou produto que estamos precisando. No entanto, na maioria das vezes, ali pertinho — ou mesmo um pouco mais longe, mas ainda dentro do mesmo bairro — há alguém que oferece exatamente aquilo que procuramos, seja um serviço ou um produto.
+<br>
+
+Pensando nisso, idealizamos o ConectaBairro, que tem como objetivo simplificar a forma como os moradores encontram serviços e empreendimentos locais. A proposta promove a economia colaborativa e ajuda pequenos empreendedores — e até mesmo pequenas empresas — a conquistarem maior visibilidade junto aos moradores da região onde estão localizados.
+<br>
+
+A ideia resgata a função que, antigamente, era desempenhada pelos "jornalzinhos de bairro", agora em formato digital e com acesso via web. Empresas e empreendedores podem cadastrar seus empreendimentos para divulgar seus serviços e produtos, enquanto usuários comuns podem consultar opções próximas de forma fácil e eficiente — evitando deslocamentos desnecessários e fortalecendo a economia local.
 
 ---
 
