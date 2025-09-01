@@ -290,7 +290,7 @@ Você pode testar a API utilizando ferramentas como **Postman** / **Insomnia ou 
 | Método | Rota                        | Descrição                              | Protegida | Exemplo de uso |
 |--------|-----------------------------|----------------------------------------|-----------|--------------------|
 | POST   | `/usuarios/cadastroUsuario` | Cadastro de novo usuário               | Não       | [Exemplo de uso](#cadastro-de-usuário-rota-pública) |
-| POST   | `/usuarios/login`           | Autenticação e geração de token JWT    | Não       | [Exemplo de uso](#login) |
+| POST   | `/usuarios/login`           | Autenticação e geração de token JWT    | Não       | [Exemplo de uso](#login-rota-pública) |
 | POST   | `/empreendimentos`          | Cadastro de empreendimento             | Sim       | [Exemplo de uso](#cadastrar-empreendimento-rota-protegida) |
 | PUT    | `/empreendimentos/:id`      | Edição de empreendimento               | Sim       | [Exemplo de uso](#editar-empreendimento-rota-protegida) |
 | DELETE | `/empreendimentos/:id`      | Exclusão de empreendimento             | Sim       | [Exemplo de uso](#deletar-empreendimento-rota-protegida) |
@@ -596,7 +596,7 @@ A API retorna mensagens claras para facilitar o consumo e o tratamento de erros.
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWZiNmE5MTI3MGUyNmZiOWU2YjE0YSIsImlhdCI6MTc1NjMwNTA1NSwiZXhwIjoxNzU2MzkxNDU1fQ.fzb-UdhcmNu7kTmfQWxD6WATpujEIxfU2Ey8bb-AEMU"
 }
 ```
-[Veja o exemplo de requisição em Login (rota pública)](#login-rota-publica)
+[Veja o exemplo de requisição em Login (rota pública)](#login-rota-pública)
 
 #### Ao Cadastrar Empreendimento
 
