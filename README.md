@@ -8,6 +8,17 @@ Com esse propósito, criamos a API que atenderá ao Web Site **ConectaBairro**, 
 - **API OpenWeatherMap**: fornece informações sobre clima e umidade da cidade pesquisada. A integração com essa API foi pensada visando a escalabilidade do projeto, pois futuramente, ao atender também a um front-end, permitirá exibir essas informações diretamente aos usuários quando acessarem a página.
 
 
+## 1. Visão Geral
+
+Muitas vezes nos deslocamos por grandes distâncias em busca de um serviço ou produto que estamos precisando. No entanto, na maioria das vezes, ali pertinho — ou mesmo um pouco mais longe, mas ainda dentro do mesmo bairro — há alguém que oferece exatamente aquilo que procuramos, seja um serviço ou um produto.
+<br>
+
+Pensando nisso, idealizamos o ConectaBairro, que tem como objetivo simplificar a forma como os moradores encontram serviços e empreendimentos locais. A proposta promove a economia colaborativa e ajuda pequenos empreendedores — e até mesmo pequenas empresas — a conquistarem maior visibilidade junto aos moradores da região onde estão localizados.
+<br>
+
+A ideia resgata a função que, antigamente, era desempenhada pelos "jornalzinhos de bairro", agora em formato digital e com acesso via web. Empresas e empreendedores podem cadastrar seus empreendimentos para divulgar seus serviços e produtos, enquanto usuários comuns podem consultar opções próximas de forma fácil e eficiente — evitando deslocamentos desnecessários e fortalecendo a economia local.
+
+---
 
 ## 📋 Sumário
 
@@ -26,17 +37,10 @@ Com esse propósito, criamos a API que atenderá ao Web Site **ConectaBairro**, 
 
 ---
 
-## 1. Visão Geral
 
-Muitas vezes nos deslocamos por grandes distâncias em busca de um serviço ou produto que estamos precisando. No entanto, na maioria das vezes, ali pertinho — ou mesmo um pouco mais longe, mas ainda dentro do mesmo bairro — há alguém que oferece exatamente aquilo que procuramos, seja um serviço ou um produto.
-<br>
 
-Pensando nisso, idealizamos o ConectaBairro, que tem como objetivo simplificar a forma como os moradores encontram serviços e empreendimentos locais. A proposta promove a economia colaborativa e ajuda pequenos empreendedores — e até mesmo pequenas empresas — a conquistarem maior visibilidade junto aos moradores da região onde estão localizados.
-<br>
 
-A ideia resgata a função que, antigamente, era desempenhada pelos "jornalzinhos de bairro", agora em formato digital e com acesso via web. Empresas e empreendedores podem cadastrar seus empreendimentos para divulgar seus serviços e produtos, enquanto usuários comuns podem consultar opções próximas de forma fácil e eficiente — evitando deslocamentos desnecessários e fortalecendo a economia local.
 
----
 
 ## 2. Funcionalidades
 
@@ -209,6 +213,7 @@ Proteção de rotas
 
 Banco em memória garante testes limpos e independentes
 ```
+
 ---
 
 
@@ -263,6 +268,8 @@ Obs: O servidor será iniciado em http://localhost:3000
 | `npm start`    | Inicia o servidor com **Node.js padrão**                                  |
 | `npm test`     | Executa os testes automatizados com **Jest** e **Supertest** usando banco em memória |
 
+
+---
 
 ## 6. Testando os Endpoints Principais
 
@@ -508,6 +515,9 @@ Exemplo:
 | Estado             | `GET /empreendimentos?estado=estadoDesejadoAqui`              | Busca empreendimentos pelo estado      |
 | Palavra-chave       | `GET /empreendimentos?palavra=palavraDesejadaAqui`            | Busca empreendimentos por palavra-chave |
 
+<br>
+
+---
 ## 7. Integração com API de Clima
 
 A API está integrada ao serviço **OpenWeather**, permitindo consultar o clima atual de qualquer cidade informada.
@@ -522,7 +532,7 @@ Essa integração também cumpre o requisito de comunicação com sistemas exter
 GET /api/clima?cidade=Fortaleza
 ```
 
-
+---
 
 ## 8. Validações
 
@@ -553,6 +563,7 @@ A API realiza validações nos dados enviados para garantir integridade, seguran
 - Rotas protegidas exigem token JWT válido
 - Verificação se o usuário autenticado é o criador do empreendimento antes de permitir edição ou exclusão
 
+---
 
 ## 9. Respostas da API
 
@@ -722,6 +733,9 @@ Ex:
   "mensagem": "Os seguintes campos são obrigatórios e não podem estar em branco: endereco.rua, endereco.bairro, endereco.cidade, endereco.estado"
 }
 ```
+<br>
+
+---
 
 ## 10. Contribuindo
 
@@ -734,8 +748,9 @@ Contribuições são bem-vindas! Para colaborar com o projeto:
 
 Sinta-se à vontade para abrir issues com sugestões ou melhorias!
 
+---
+
 ## 11. Licença
 
 Este projeto está licenciado sob os termos da [MIT License](LICENSE).
-
 
