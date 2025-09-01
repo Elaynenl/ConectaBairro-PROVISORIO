@@ -289,12 +289,12 @@ Você pode testar a API utilizando ferramentas como **Postman** / **Insomnia ou 
 
 | Método | Rota                        | Descrição                              | Protegida | Exemplo de uso |
 |--------|-----------------------------|----------------------------------------|-----------|--------------------|
-| POST   | `/usuarios/cadastroUsuario` | Cadastro de novo usuário               | Não       | [Exemplo de uso](#cadastro-de-usuário-rota-pública) |
-| POST   | `/usuarios/login`           | Autenticação e geração de token JWT    | Não       | [Exemplo de uso](#login) |
-| POST   | `/empreendimentos`          | Cadastro de empreendimento             | Sim       | [Exemplo de uso](#cadastrar-empreendimento-rota-protegida) |
-| PUT    | `/empreendimentos/:id`      | Edição de empreendimento               | Sim       | [Exemplo de uso](#editar-empreendimento-rota-protegida) |
-| DELETE | `/empreendimentos/:id`      | Exclusão de empreendimento             | Sim       | [Exemplo de uso](#deletar-empreendimento-rota-protegida) |
-| GET    | `/empreendimentos`          | Listagem e busca de empreendimentos    | Não       | [Exemplo de uso](#listar-e-buscar-empreendimentos-rota-pública) |
+| POST   | `/usuarios/cadastroUsuario` | Cadastro de novo usuário               | Não       | [Exemplo de uso](#ao-cadastrar-usuário) |
+| POST   | `/usuarios/login`           | Autenticação e geração de token JWT    | Não       | [Exemplo de uso](#ao-realizar-login) |
+| POST   | `/empreendimentos`          | Cadastro de empreendimento             | Sim       | [Exemplo de uso](#ao-cadastrar-empreendimento-rota-protegida) |
+| PUT    | `/empreendimentos/:id`      | Edição de empreendimento               | Sim       | [Exemplo de uso](#ao-editar-empreendimento-rota-protegida) |
+| DELETE | `/empreendimentos/:id`      | Exclusão de empreendimento             | Sim       | [Exemplo de uso](#ao-deletar-empreendimento-rota-protegida) |
+| GET    | `/empreendimentos`          | Listagem e busca de empreendimentos    | Não       | [Exemplo de uso](#ao-listar-e-buscar-empreendimentos-rota-pública) |
 
 
 ### 🔐 Autenticação
@@ -573,7 +573,7 @@ A API retorna mensagens claras para facilitar o consumo e o tratamento de erros.
 
 
 
-#### Cadastrar Usuário
+#### Ao Cadastrar Usuário
 
 ```json
 {
@@ -586,7 +586,7 @@ A API retorna mensagens claras para facilitar o consumo e o tratamento de erros.
 ```
 [Veja o exemplo de requisição em Cadastrar Usuário](#cadastro-de-usuário-rota-pública)
 
-#### Login
+#### Ao realizar Login
 
 ```json
 {
@@ -598,7 +598,7 @@ A API retorna mensagens claras para facilitar o consumo e o tratamento de erros.
 ```
 [Veja o exemplo de requisição em Login](#login)
 
-#### Cadastrar Empreendimento
+#### Ao Cadastrar Empreendimento
 
 Ex:
 
@@ -644,7 +644,7 @@ Ex:
 
 [Veja o exemplo de requisição em Cadastrar Empreendimento](#cadastrar-empreendimento-rota-protegida)
 
-#### Editar Empreendimento
+#### Ao Editar Empreendimento
 
 ```json
 {
@@ -688,7 +688,7 @@ Ex:
 
 [Veja o exemplo de requisição em Editar Empreendimento](#editar-empreendimento-rota-protegida)
 
-#### Deletar Empreendimento
+#### Ao Deletar Empreendimento
 
 ```json
 {
