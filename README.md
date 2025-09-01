@@ -325,7 +325,7 @@ A senha deve conter no mínimo 6 caracteres e o e-mail não deve ter sido cadast
 
 <b>[Veja a resposta esperada aqui](#ao-cadastrar-usuário)
 
-### Login
+### Login (rota pública)
 
 Para realizar o login, siga os passos abaixo:
 
@@ -584,7 +584,7 @@ A API retorna mensagens claras para facilitar o consumo e o tratamento de erros.
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjRkNGNkYjk4ZGZiNGFiZTZhZGRmZiIsImlhdCI6MTc1NjY4MTQyMiwiZXhwIjoxNzU2NzY3ODIyfQ.SW-PKqXcy0_yxIxKblU_Qo2NEWXuVdfjMcH0TpNA0sU"
 }
 ```
-[Veja o exemplo de requisição em Cadastrar Usuário](#cadastro-de-usuário-rota-pública)
+[Veja o exemplo de requisição em Cadastro de usuário (rota pública)](#cadastro-de-usuário-rota-pública)
 
 #### Ao realizar Login
 
@@ -596,7 +596,7 @@ A API retorna mensagens claras para facilitar o consumo e o tratamento de erros.
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWZiNmE5MTI3MGUyNmZiOWU2YjE0YSIsImlhdCI6MTc1NjMwNTA1NSwiZXhwIjoxNzU2MzkxNDU1fQ.fzb-UdhcmNu7kTmfQWxD6WATpujEIxfU2Ey8bb-AEMU"
 }
 ```
-[Veja o exemplo de requisição em Login](#login)
+[Veja o exemplo de requisição em Login (rota pública)](#login-rota-publica)
 
 #### Ao Cadastrar Empreendimento
 
@@ -642,7 +642,7 @@ Ex:
 }
 ```
 
-[Veja o exemplo de requisição em Cadastrar Empreendimento](#cadastrar-empreendimento-rota-protegida)
+[Veja o exemplo de requisição em Cadastrar Empreendimento (rota protegida)](#cadastrar-empreendimento-rota-protegida)
 
 #### Ao Editar Empreendimento
 
@@ -696,7 +696,7 @@ Ex:
 }
 ```
 
-[Veja o exemplo de requisição em Deletar Empreendimento](#deletar-empreendimento-rota-protegida)
+[Veja o exemplo de requisição em Deletar Empreendimento (rota protegida)](#deletar-empreendimento-rota-protegida)
 
 
 ### ⚠️ Em caso de erro, a API retorna mensagens padronizadas como:
