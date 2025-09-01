@@ -289,12 +289,12 @@ Você pode testar a API utilizando ferramentas como **Postman** / **Insomnia ou 
 
 | Método | Rota                        | Descrição                              | Protegida | Exemplo de uso |
 |--------|-----------------------------|----------------------------------------|-----------|--------------------|
-| POST   | `/usuarios/cadastroUsuario` | Cadastro de novo usuário               | Não       | [Exemplo de uso](#📌-cadastro-de-usuário-rota-pública) |
-| POST   | `/usuarios/login`           | Autenticação e geração de token JWT    | Não       | [Exemplo de uso](#🔑-login) |
-| POST   | `/empreendimentos`          | Cadastro de empreendimento             | Sim       | [Exemplo de uso](#➕-cadastrar-empreendimento-rota-protegida) |
-| PUT    | `/empreendimentos/:id`      | Edição de empreendimento               | Sim       | [Exemplo de uso](#✏️-editar-empreendimento-rota-protegida) |
-| DELETE | `/empreendimentos/:id`      | Exclusão de empreendimento             | Sim       | [Exemplo de uso](#❌-deletar-empreendimento-rota-protegida) |
-| GET    | `/empreendimentos`          | Listagem e busca de empreendimentos    | Não       | [Exemplo de uso](#🔍-listar-e-buscar-empreendimentos-rota-pública) |
+| POST   | `/usuarios/cadastroUsuario` | Cadastro de novo usuário               | Não       | [Exemplo de uso](#cadastro-de-usuário-rota-pública) |
+| POST   | `/usuarios/login`           | Autenticação e geração de token JWT    | Não       | [Exemplo de uso](#login) |
+| POST   | `/empreendimentos`          | Cadastro de empreendimento             | Sim       | [Exemplo de uso](#cadastrar-empreendimento-rota-protegida) |
+| PUT    | `/empreendimentos/:id`      | Edição de empreendimento               | Sim       | [Exemplo de uso](#editar-empreendimento-rota-protegida) |
+| DELETE | `/empreendimentos/:id`      | Exclusão de empreendimento             | Sim       | [Exemplo de uso](#deletar-empreendimento-rota-protegida) |
+| GET    | `/empreendimentos`          | Listagem e busca de empreendimentos    | Não       | [Exemplo de uso](#listar-e-buscar-empreendimentos-rota-pública) |
 
 
 ### 🔐 Autenticação
@@ -305,7 +305,7 @@ Algumas rotas são protegidas e só podem ser acessadas com token JWT válido, q
 
 
 
-### 📌 Cadastro de usuário (rota pública)
+### Cadastro de usuário (rota pública)
 
 Para cadastrar um novo usuário, siga os passos abaixo:
 
@@ -325,7 +325,7 @@ A senha deve conter no mínimo 6 caracteres e o e-mail não deve ter sido cadast
 
 <b>[Veja a resposta esperada aqui](#cadastrar-usuário)
 
-### 🔑 Login
+### Login
 
 Para realizar o login, siga os passos abaixo:
 
@@ -352,7 +352,7 @@ Authorization: Bearer SEU_TOKEN_JWT
 ## Endpoins de Empreendimentos
 
 
-### ➕ Cadastrar empreendimento (rota protegida)
+### Cadastrar empreendimento (rota protegida)
 
 1. Utilize o método POST na rota: 
 ```/empreendimentos```
@@ -417,7 +417,7 @@ Authorization: Bearer SEU_TOKEN_JWT
 
 [Veja a resposta esperada aqui](#cadastrar-empreendimento)
 
-### ✏️ Editar empreendimento (rota protegida)
+### Editar empreendimento (rota protegida)
 
 1. Utilize o método PUT na rota: 
 
@@ -479,7 +479,7 @@ Authorization: Bearer SEU_TOKEN_JWT
 ⚠️ Importante: Se você alterar o campo endereco.cep, a API irá buscar automaticamente os dados atualizados (rua, bairro, cidade, estado) usando a integração com a API ViaCEP.
 
 
-### ❌ Deletar empreendimento (rota protegida)
+### Deletar empreendimento (rota protegida)
 
 1. Utilize o método DELETE na rota:
 ``` /empreendimentos/:id```
@@ -496,7 +496,7 @@ Exemplo:
 
 [Veja a resposta esperada aqui](#deletar-empreendimento)
 
-### 🔍 Listar e Buscar Empreendimentos (rota pública)
+### Listar e Buscar Empreendimentos (rota pública)
 
 1. Utilize o método GET na rota: 
 ```
@@ -584,7 +584,7 @@ A API retorna mensagens claras para facilitar o consumo e o tratamento de erros.
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjRkNGNkYjk4ZGZiNGFiZTZhZGRmZiIsImlhdCI6MTc1NjY4MTQyMiwiZXhwIjoxNzU2NzY3ODIyfQ.SW-PKqXcy0_yxIxKblU_Qo2NEWXuVdfjMcH0TpNA0sU"
 }
 ```
-[Veja o exemplo de requisição em Cadastrar Usuário](#📌-cadastro-de-usuário-rota-pública)
+[Veja o exemplo de requisição em Cadastrar Usuário](#cadastro-de-usuário-rota-pública)
 
 #### Login
 
@@ -596,7 +596,7 @@ A API retorna mensagens claras para facilitar o consumo e o tratamento de erros.
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWZiNmE5MTI3MGUyNmZiOWU2YjE0YSIsImlhdCI6MTc1NjMwNTA1NSwiZXhwIjoxNzU2MzkxNDU1fQ.fzb-UdhcmNu7kTmfQWxD6WATpujEIxfU2Ey8bb-AEMU"
 }
 ```
-[Veja o exemplo de requisição em Login](#🔑-login)
+[Veja o exemplo de requisição em Login](#login)
 
 #### Cadastrar Empreendimento
 
@@ -642,7 +642,7 @@ Ex:
 }
 ```
 
-[Veja o exemplo de requisição em Cadastrar Empreendimento](#➕-cadastrar-empreendimento-rota-protegida)
+[Veja o exemplo de requisição em Cadastrar Empreendimento](#cadastrar-empreendimento-rota-protegida)
 
 #### Editar Empreendimento
 
@@ -686,7 +686,7 @@ Ex:
 }
 ```
 
-[Veja o exemplo de requisição em Editar Empreendimento](#✏️-editar-empreendimento-rota-protegida)
+[Veja o exemplo de requisição em Editar Empreendimento](#editar-empreendimento-rota-protegida)
 
 #### Deletar Empreendimento
 
@@ -696,7 +696,7 @@ Ex:
 }
 ```
 
-[Veja o exemplo de requisição em Deletar Empreendimento](#❌-deletar-empreendimento-rota-protegida)
+[Veja o exemplo de requisição em Deletar Empreendimento](#deletar-empreendimento-rota-protegida)
 
 
 ### ⚠️ Em caso de erro, a API retorna mensagens padronizadas como:
