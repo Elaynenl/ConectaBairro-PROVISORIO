@@ -362,6 +362,15 @@ Algumas rotas são protegidas e só podem ser acessadas com token JWT válido, q
 > ⚠️ Rotas públicas, como login e cadastro de usuário, não exigem o token JWT.
 
 
+### Fluxo
+
+Para testar corretamente a API, siga o fluxo abaixo:
+
+- Cadastre um novo usuário;
+- Realize o login com as credenciais cadastradas;
+- Copie o token JWT retornado após o login.
+- Utilize esse token nas rotas protegidas (cadastrar, editar e deletar empreendimento);
+- Em seguida, siga o passo a passo descrito abaixo para testar cada funcionalidade da API.
 
 ### Cadastro de usuário (rota pública)
 
