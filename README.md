@@ -300,7 +300,13 @@ npm install
 ```
 ### Configure as variáveis de ambiente 
 
-Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
+Crie um arquivo .env na raiz do projeto com base no arquivo .env.example já incluído no repositório. Ele contém todas as variáveis necessárias para rodar o projeto.
+
+```bash
+cp .env.example .env
+```
+
+Preencha os valores reais conforme seu ambiente:
 
 ```
 PORT=3000
