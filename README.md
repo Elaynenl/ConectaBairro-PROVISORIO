@@ -542,7 +542,9 @@ Authorization: Bearer SEU_TOKEN_JWT
 1. Utilize o método DELETE na rota:
 ``` /empreendimentos/:id```
 
-2. Insira o token JWT no header da requisição:
+Obs: Substitua :id pelo ID do empreendimento que deseja deletar.
+
+3. Insira o token JWT no header da requisição:
 
 ```http
 Authorization: Bearer SEU_TOKEN_JWT
