@@ -87,7 +87,6 @@ Os requisitos funcionais descrevem o comportamento esperado do sistema e suas fu
 - **RF13**: O sistema deve permitir a busca por empreendimentos usando filtros como rua, bairro, cidade, estado, CEP ou palavras-chave.  
 - **RF14**: O sistema deve agrupar os empreendimentos por cidade e retornar os dados climáticos da cidade via API OpenWeatherMap.  
 - **RF15**: O sistema deve permitir que o criador de um empreendimento o exclua permanentemente.
-
 <br>
 
 ### II - Requisitos Não Funcionais
