@@ -22,7 +22,8 @@ Com esse propósito, criamos a API que atenderá ao Web Site **ConectaBairro**, 
 9. [Validações](#9-validações)  
 10. [Respostas da API](#10-respostas-da-api)  
 11. [Contribuindo](#11-contribuindo)  
-12. [Licença](#12-licença) 
+12. [Licença](#12-licença)
+13. [Equipe e Distribuição de Responsabilidades](#13-equipe-e-distribuição-de-responsabilidades)
 
 
 ---
@@ -822,4 +823,102 @@ Sinta-se à vontade para abrir issues com sugestões ou melhorias!
 ## 12. Licença
 
 Este projeto está licenciado sob os termos da [MIT License](LICENSE).
+
+---
+
+## 13. Equipe e Distribuição de Responsabilidades
+
+O desenvolvimento da API ConectaBairro foi realizado por uma equipe composta por seis integrantes, com atuação colaborativa e responsabilidades bem definidas. Cada membro ficou responsável por partes específicas do projeto, garantindo clareza nos commits e organização no repositório.
+
+### Elayne Nascimento Lima  
+**Função:** Líder Técnica e Desenvolvedora Principal  
+**Responsabilidades:**  
+- Planejamento da arquitetura da API e definição da estrutura de pastas  
+- Implementação completa das rotas de empreendimentos, incluindo controller, model e validações  
+- Criação do middleware de autenticação com JWT  
+- Desenvolvimento do serviço de integração com a API ViaCEP  
+- Estruturação dos testes automatizados para empreendimentos  
+- Elaboração do arquivo `.env.example` com as variáveis de ambiente necessárias  
+- Redação do README principal e organização da documentação geral do projeto  
+
+**Arquivos sob responsabilidade:**  
+- `src/controllers/empreendimentosController.js`  
+- `src/models/Empreendimento.js`  
+- `src/routes/empreendimentos.js`  
+- `src/services/viaCepService.js`  
+- `src/middleware/authMiddleware.js`  
+- `test/empreendimentos.test.js`  
+- `.env.example`  
+- `README.md`
+
+---
+
+###  Gilssilany Valentino Chaves
+**Função:** Autenticação e segurança  
+**Responsabilidades:**  
+- Implementação do controller de usuários com cadastro e login  
+- Configuração da conexão com o banco de dados MongoDB Atlas  
+- Testes de rotas protegidas e validação de tokens JWT  
+
+**Arquivos sob responsabilidade:**  
+- `src/controllers/usuariosController.js`  
+- `src/config/db.js`
+
+---
+
+### Igor Marcelo de Sousa Freire  
+**Função:** Integração com serviços externos  
+**Responsabilidades:**  
+- Implementação do controller de clima com consumo da API OpenWeatherMap  
+- Desenvolvimento do controller de CEP com consumo da API ViaCEP  
+- Organização das rotas externas de clima e CEP  
+
+**Arquivos sob responsabilidade:**  
+- `src/controllers/climaController.js`  
+- `src/controllers/cepController.js`  
+- `src/routes/climaRoutes.js`  
+- `src/routes/cep.js`
+
+---
+
+### Francisco Eudes Rodrigues da Silva  
+**Função:** Documentação complementar e estrutura técnica  
+**Responsabilidades:**  
+- Redação da documentação técnica da arquitetura da API  
+- Organização da estrutura de rotas de usuários  
+- Apoio na definição dos fluxos de autenticação e cadastro  
+
+**Arquivos sob responsabilidade:**  
+- `docs/architecture.md`  
+- `src/routes/usuarios.js`
+
+---
+
+### Marcus Vinicius Monteiro da Silva Costa  
+**Função:** Modelagem de dados e validações  
+**Responsabilidades:**  
+- Definição dos campos e regras de validação do modelo de usuário  
+- Estruturação do schema com criptografia de senha  
+- Sugestões de tratamento de erros e mensagens de validação  
+
+**Arquivo sob responsabilidade:**  
+- `src/models/Usuario.js`
+
+---
+
+### Aluísio Rodrigues Júnior  
+**Função:** Validação técnica e testes manuais  
+**Responsabilidades:**  
+- Criação da coleção de testes no Postman  
+- Testes manuais das rotas públicas e protegidas  
+- Validação de respostas da API e sugestões de melhoria na experiência de uso  
+- Desenvolvimento dos testes automatizados para autenticação de usuários  
+
+**Arquivos sob responsabilidade:**  
+- `postman/collection.json`  
+- `test/usuarios.test.js`
+
+
+
+
 
