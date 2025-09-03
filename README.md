@@ -481,7 +481,7 @@ Authorization: Bearer SEU_TOKEN_JWT
 
 ```/empreendimentos/:id```
 
-<b>Substitua :id pelo ID do empreendimento que deseja editar.
+<b>Obs: Substitua :id pelo ID do empreendimento que deseja editar.
 
 2. Insira o token JWT no header da requisição:
 
