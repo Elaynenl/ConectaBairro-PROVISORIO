@@ -12,16 +12,17 @@ Com esse propósito, criamos a API que atenderá ao Web Site **ConectaBairro**, 
 ## 📋 Sumário
 
 1. [Visão Geral](#1-visão-geral)  
-2. [Funcionalidades](#2-funcionalidades)  
-3. [Tecnologias Utilizadas](#3-tecnologias-utilizadas)  
-4. [Arquitetura do Projeto](#4-arquitetura-do-projeto)  
-5. [Instalação e Execução](#5-instalação-e-execução)  
-6. [Testando os Endpoints Principais](#6-testando-os-endpoints-principais)  
-7. [Integração com API de Clima](#7-integração-com-api-de-clima)  
-8. [Validações](#8-validações)  
-9. [Respostas da API](#9-respostas-da-api)  
-10. [Contribuindo](#10-contribuindo)  
-11. [Licença](#11-licença) 
+2. [Funcionalidades](#2-funcionalidades)
+3. [Tecnologias Utilizadas](#3-tecnologias-utilizadas) 
+4. [Requisitos do Sistema](#4-requisitos-do-sistema)
+5. [Arquitetura do Projeto](#5-arquitetura-do-projeto)  
+6. [Instalação e Execução](#6-instalação-e-execução)  
+7. [Testando os Endpoints Principais](#7-testando-os-endpoints-principais)  
+8. [Integração com API de Clima](#8-integração-com-api-de-clima)  
+9. [Validações](#9-validações)  
+10. [Respostas da API](#10-respostas-da-api)  
+11. [Contribuindo](#11-contribuindo)  
+12. [Licença](#12-licença) 
 
 
 ---
@@ -37,10 +38,6 @@ Pensando nisso, idealizamos o ConectaBairro, que tem como objetivo simplificar a
 A ideia resgata a função que, antigamente, era desempenhada pelos "jornalzinhos de bairro", agora em formato digital e com acesso via web. Empresas e empreendedores podem cadastrar seus empreendimentos para divulgar seus serviços e produtos, enquanto usuários comuns podem consultar opções próximas de forma fácil e eficiente — evitando deslocamentos desnecessários e fortalecendo a economia local.
 
 ---
-
-
-
-
 
 
 ## 2. Funcionalidades
@@ -69,7 +66,68 @@ A ideia resgata a função que, antigamente, era desempenhada pelos "jornalzinho
 
 ---
 
-## 4. Arquitetura do Projeto
+## 4. Requisitos do Sistema
+
+### I - Requisitos Funcionais
+
+Os requisitos funcionais descrevem o comportamento esperado do sistema e suas funcionalidades principais.
+
+- **RF01**: O sistema deve permitir o cadastro de usuários com nome, email e senha.  
+- **RF02**: O sistema deve validar a unicidade do email no momento do cadastro.  
+- **RF03**: O sistema deve permitir o login de usuários e retornar um token JWT.  
+- **RF04**: O sistema deve proteger rotas sensíveis, exigindo autenticação via token JWT.  
+- **RF05**: O sistema deve verificar se o usuário autenticado é o criador do empreendimento antes de permitir edição ou exclusão.  
+- **RF06**: O sistema deve permitir o cadastro de empreendimentos com nome, descrição, endereço, telefone, email e palavras-chave.  
+- **RF07**: O sistema deve integrar-se à API ViaCEP para preencher automaticamente os campos de endereço com base no CEP informado.  
+- **RF08**: O sistema deve normalizar os campos `cidade`, `bairro` e `palavrasChave` para facilitar buscas.  
+- **RF09**: O sistema deve permitir a edição parcial de qualquer campo do empreendimento.  
+- **RF10**: Ao editar o CEP, o sistema deve atualizar automaticamente os dados de endereço via API ViaCEP.  
+- **RF11**: O sistema deve validar os campos obrigatórios durante a edição.  
+- **RF12**: O sistema deve permitir a listagem de todos os empreendimentos cadastrados.  
+- **RF13**: O sistema deve permitir a busca por empreendimentos usando filtros como rua, bairro, cidade, estado, CEP ou palavras-chave.  
+- **RF14**: O sistema deve agrupar os empreendimentos por cidade e retornar os dados climáticos da cidade via API OpenWeatherMap.  
+- **RF15**: O sistema deve permitir que o criador de um empreendimento o exclua permanentemente.
+
+<br>
+
+### II - Requisitos Não Funcionais
+
+Os requisitos não funcionais definem critérios de qualidade, desempenho, segurança e arquitetura.
+
+### Segurança
+
+- **RNF01**: As senhas dos usuários devem ser armazenadas de forma criptografada usando bcrypt.  
+- **RNF02**: O sistema deve utilizar JWT para autenticação segura e stateless.  
+- **RNF03**: O sistema deve validar o token JWT em todas as rotas protegidas.  
+
+### Usabilidade
+
+- **RNF04**: As mensagens de erro devem ser claras e explicativas, especialmente em casos de validação.  
+- **RNF05**: As respostas da API devem seguir um padrão consistente, com mensagens e dados agrupados.  
+
+### Manutenibilidade
+
+- **RNF06**: O sistema deve seguir a arquitetura MVC para facilitar manutenção e escalabilidade.  
+- **RNF07**: O código deve estar modularizado em controllers, models, routes, services e middlewares.  
+
+### Testabilidade
+
+- **RNF08**: O sistema deve possuir testes automatizados cobrindo o fluxo completo de autenticação e CRUD de empreendimentos.  
+- **RNF09**: Os testes devem ser executados em banco de dados em memória (MongoMemoryServer) para garantir isolamento.  
+
+### Integração com APIs externas
+
+- **RNF10**: O sistema deve consumir a API ViaCEP para autocompletar endereços.  
+- **RNF11**: O sistema deve consumir a API OpenWeatherMap para retornar dados climáticos por cidade.  
+
+### Desempenho
+
+- **RNF12**: As requisições devem ser respondidas em tempo hábil, com tempo médio inferior a 500ms em ambiente local.  
+- **RNF13**: O sistema deve evitar chamadas desnecessárias às APIs externas, utilizando lógica condicional para otimizar o consumo.
+<br></br>
+
+---
+## 5. Arquitetura do Projeto
 
 O backend foi baseado na arquitetura MVC (Model-View-Controller) e adaptado para uma API RESTful em Node.js:
 
@@ -218,7 +276,7 @@ Banco em memória garante testes limpos e independentes
 ---
 
 
-## 5. Instalação e Execução
+## 6. Instalação e Execução
 
 Antes de começar, certifique-se de ter instalado:
 
@@ -272,7 +330,7 @@ Obs: O servidor será iniciado em http://localhost:3000
 
 ---
 
-## 6. Testando os Endpoints Principais
+## 7. Testando os Endpoints Principais
 
 Você pode testar a API utilizando ferramentas como **Postman** / **Insomnia ou similares** 
 
@@ -519,7 +577,7 @@ Exemplo:
 <br>
 
 ---
-## 7. Integração com API de Clima
+## 8. Integração com API de Clima
 
 A API está integrada ao serviço **OpenWeather**, permitindo consultar o clima atual de qualquer cidade informada.
 
@@ -535,7 +593,7 @@ GET /api/clima?cidade=Fortaleza
 
 ---
 
-## 8. Validações
+## 9. Validações
 
 A API realiza validações nos dados enviados para garantir integridade, segurança e consistência. Abaixo estão as principais regras aplicadas:
 
@@ -566,7 +624,7 @@ A API realiza validações nos dados enviados para garantir integridade, seguran
 
 ---
 
-## 9. Respostas da API
+## 10. Respostas da API
 
 A API retorna mensagens claras para facilitar o consumo e o tratamento de erros. Abaixo estão alguns exemplos de respostas que podem ser esperadas:
 
@@ -738,7 +796,7 @@ Ex:
 
 ---
 
-## 10. Contribuindo
+## 11. Contribuindo
 
 Contribuições são bem-vindas! Para colaborar com o projeto:
 
@@ -751,7 +809,7 @@ Sinta-se à vontade para abrir issues com sugestões ou melhorias!
 
 ---
 
-## 11. Licença
+## 12. Licença
 
 Este projeto está licenciado sob os termos da [MIT License](LICENSE).
 
