@@ -158,12 +158,13 @@ EMPREENDIMENTOSAPI/
 │   │   └─ Usuario.js                   # Schema do usuário com criptografia de
                                           senha
 │   ├─ routes/
-│   │   ├─ cep.js                       # Rota para busca por CEP
+│   │   ├─ cepRoutes.js                       # Rota para busca por CEP
 │   │   ├─ climaRoutes.js               # Rota para consulta de clima
-│   │   ├─ empreendimentos.js           # Rotas de CRUD de empreendimentos
-│   │   └─ usuarios.js                  # Rotas de cadastro e login
+│   │   ├─ empreendimentosRoutes.js           # Rotas de CRUD de empreendimentos
+│   │   └─ usuariosRoutes.js                  # Rotas de cadastro e login
 │   ├─ services/
 │   │   └─ viaCepService.js             # Serviço que consome a API ViaCEP
+│   │   └─ climaService.js             # Serviço que consome a API OpenWeatherMap
 │   ├─ utils/
 │   │   └─ funcoesUtils.js              # Funções auxiliares para filtros e
                                           normalização
@@ -238,6 +239,7 @@ climaController.js: Integração com OpenWeather
 #### 6 - Services (services/)
 
 🔹 viaCepService.js: Abstrai a chamada à API ViaCEP, retornando dados de endereço a partir de um CEP.
+🔹 climaService.js: Abstrai a chamada à API OpenWeatherMap, retornando dados climáticos de uma cidade.
 
 #### 7 - Models (models/)
 
