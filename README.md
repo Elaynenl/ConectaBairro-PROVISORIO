@@ -240,7 +240,7 @@ O diagrama abaixo resume visualmente esse fluxo, mostrando como cada componente 
 
 ## 📌 Diagrama da arquitetura
 
-<img width="2170" height="800" alt="diagrama_arquitetura_api" src="https://github.com/user-attachments/assets/49e9e5cc-bfd5-420a-a1c9-c8a53bf52dc1" />
+<img width="2170" height="800" alt="diagrama_arquitetura_api (2)" src="https://github.com/user-attachments/assets/ba1e2bdb-f58a-4ac7-a5db-2fcbdef12bad" />
 
 ---
 
