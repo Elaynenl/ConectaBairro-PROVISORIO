@@ -21,9 +21,9 @@ Com esse propósito, criamos a API que atenderá ao Web Site **ConectaBairro**, 
 8. [Integração com API de Clima](#8-integração-com-api-de-clima)  
 9. [Validações](#9-validações)  
 10. [Respostas da API](#10-respostas-da-api)  
-11. [Contribuindo](#11-contribuindo)  
-12. [Licença](#12-licença)
-13. [Equipe e Distribuição de Responsabilidades](#13-equipe-e-distribuição-de-responsabilidades)
+11. [Equipe e Distribuição de Responsabilidades](#13-equipe-e-distribuição-de-responsabilidades)
+12. [Contribuindo](#11-contribuindo)  
+13. [Licença](#12-licença)
 
 
 ---
@@ -815,26 +815,8 @@ Ex:
 
 ---
 
-## 11. Contribuindo
 
-Contribuições são bem-vindas! Para colaborar com o projeto:
-
-1. Faça um fork deste repositório
-2. Crie uma branch: `git checkout -b minha-feature`
-3. Faça suas alterações e commit: `git commit -m 'Minha contribuição'`
-4. Envie um pull request
-
-Sinta-se à vontade para abrir issues com sugestões ou melhorias!
-
----
-
-## 12. Licença
-
-Este projeto está licenciado sob os termos da [MIT License](LICENSE).
-
----
-
-## 13. Equipe e Distribuição de Responsabilidades
+## 11. Equipe e Distribuição de Responsabilidades
 
 O desenvolvimento da API ConectaBairro foi realizado por uma equipe composta por seis integrantes, com atuação colaborativa e responsabilidades bem definidas. Cada membro ficou responsável por partes específicas do projeto, garantindo clareza nos commits e organização no repositório.
 
@@ -852,7 +834,7 @@ O desenvolvimento da API ConectaBairro foi realizado por uma equipe composta por
 **Arquivos sob responsabilidade:**  
 - `src/controllers/empreendimentosController.js`  
 - `src/models/Empreendimento.js`  
-- `src/routes/empreendimentos.js`  
+- `src/routes/empreendimentosRoutes.js`  
 - `src/services/viaCepService.js`  
 - `src/middleware/authMiddleware.js`  
 - `test/empreendimentos.test.js`  
@@ -878,14 +860,16 @@ O desenvolvimento da API ConectaBairro foi realizado por uma equipe composta por
 **Função:** Integração com serviços externos  
 **Responsabilidades:**  
 - Implementação do controller de clima com consumo da API OpenWeatherMap  
-- Desenvolvimento do controller de CEP com consumo da API ViaCEP  
+- Desenvolvimento do controller de CEP com consumo da API ViaCEP
+- Criação e manutenção dos serviços de integração com APIs públicas
 - Organização das rotas externas de clima e CEP  
 
 **Arquivos sob responsabilidade:**  
 - `src/controllers/climaController.js`  
-- `src/controllers/cepController.js`  
+- `src/controllers/cepController.js`
+- `src/services/climaService.js`
 - `src/routes/climaRoutes.js`  
-- `src/routes/cep.js`
+- `src/routes/cepRoutes.js`
 
 ---
 
@@ -898,7 +882,7 @@ O desenvolvimento da API ConectaBairro foi realizado por uma equipe composta por
 
 **Arquivos sob responsabilidade:**  
 - `docs/architecture.md`  
-- `src/routes/usuarios.js`
+- `src/routes/usuariosRoutes.js`
 
 ---
 
@@ -926,6 +910,25 @@ O desenvolvimento da API ConectaBairro foi realizado por uma equipe composta por
 - `postman/collection.json`  
 - `test/usuarios.test.js`
 
+---
+
+
+## 12. Contribuindo
+
+Contribuições são bem-vindas! Para colaborar com o projeto:
+
+1. Faça um fork deste repositório
+2. Crie uma branch: `git checkout -b minha-feature`
+3. Faça suas alterações e commit: `git commit -m 'Minha contribuição'`
+4. Envie um pull request
+
+Sinta-se à vontade para abrir issues com sugestões ou melhorias!
+
+---
+
+## 13. Licença
+
+Este projeto está licenciado sob os termos da [MIT License](LICENSE).
 
 
 
