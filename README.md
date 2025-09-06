@@ -13,17 +13,18 @@ Com esse propósito, criamos a API que atenderá ao Web Site **ConectaBairro**, 
 
 1. [Visão Geral](#1-visão-geral)  
 2. [Funcionalidades](#2-funcionalidades)
-3. [Tecnologias Utilizadas](#3-tecnologias-utilizadas) 
-4. [Requisitos do Sistema](#4-requisitos-do-sistema)
-5. [Arquitetura do Projeto](#5-arquitetura-do-projeto)  
-6. [Instalação e Execução](#6-instalação-e-execução)  
-7. [Testando os Endpoints Principais](#7-testando-os-endpoints-principais)  
-8. [Integração com API de Clima](#8-integração-com-api-de-clima)  
-9. [Validações](#9-validações)  
-10. [Respostas da API](#10-respostas-da-api)  
-11. [Equipe e Distribuição de Responsabilidades](#13-equipe-e-distribuição-de-responsabilidades)
-12. [Contribuindo](#11-contribuindo)  
-13. [Licença](#12-licença)
+3. [Tecnologias Utilizadas](#3-tecnologias-utilizadas)
+4. [Protocolos de Integração Utilizados](#4-protocolos-de-integração-utilizados)
+5. [Requisitos do Sistema](#5-requisitos-do-sistema)
+6. [Arquitetura do Projeto](#6-arquitetura-do-projeto)  
+7. [Instalação e Execução](#7-instalação-e-execução)  
+8. [Testando os Endpoints Principais](#8-testando-os-endpoints-principais)  
+9. [Integração com API de Clima](#9-integração-com-api-de-clima)  
+10. [Validações](#10-validações)  
+11. [Respostas da API](#11-respostas-da-api)  
+12. [Equipe e Distribuição de Responsabilidades](#12-equipe-e-distribuição-de-responsabilidades)
+13. [Contribuindo](#13-contribuindo)  
+14. [Licença](#14-licença)
 
 
 ---
@@ -67,7 +68,45 @@ A ideia resgata a função que, antigamente, era desempenhada pelos "jornalzinho
 
 ---
 
-## 4. Requisitos do Sistema
+## 4. Protocolos de Integração Utilizados
+
+O projeto **ConectaBairro** utiliza uma combinação de protocolos e padrões de integração para garantir interoperabilidade, segurança e escalabilidade entre os módulos internos e os serviços externos.
+
+### 🔹 HTTP/HTTPS
+- **HTTP** é o protocolo base utilizado para comunicação entre cliente e servidor local.
+- **HTTPS** é utilizado nas integrações com serviços externos, como:
+  - `https://viacep.com.br/ws/...`
+  - `https://api.openweathermap.org/data/...`
+- Embora o servidor Express rode em **HTTP** durante o desenvolvimento local (`http://localhost:3000`), a API realiza chamadas externas via **HTTPS**, garantindo segurança na comunicação com sistemas públicos.
+
+### 🔹 REST (Representational State Transfer)
+- A API segue o padrão RESTful, com rotas organizadas por recursos (`/usuarios`, `/empreendimentos`, etc.).
+- Métodos HTTP são utilizados de forma semântica:
+  - `GET` para leitura
+  - `POST` para criação
+  - `PUT` para atualização
+  - `DELETE` para remoção
+
+### 🔹 JSON (JavaScript Object Notation)
+- Todas as requisições e respostas da API utilizam o formato JSON.
+- Isso facilita o consumo por frontends, aplicativos móveis e ferramentas como Postman ou Insomnia.
+
+### 🔹 JWT (JSON Web Token)
+- Utilizado para autenticação e autorização em rotas protegidas.
+- Após o login, o usuário recebe um token JWT que deve ser enviado no header.
+- O middleware `authMiddleware.js` valida esse token antes de permitir acesso a rotas sensíveis.
+
+### 🔹 Integração com APIs externas
+- **ViaCEP**: acessada via HTTP GET para autocompletar dados de endereço com base no CEP informado.
+- **OpenWeatherMap**: acessada via HTTP GET para obter dados climáticos da cidade pesquisada.
+- Ambas as integrações são encapsuladas em arquivos de serviço:
+- `viaCepService.js`
+- `climaService.js`
+- Essa abordagem garante modularidade, reutilização e desacoplamento da lógica externa.
+
+---
+
+## 5. Requisitos do Sistema
 
 ### I - Requisitos Funcionais
 
@@ -127,7 +166,7 @@ Os requisitos não funcionais definem critérios de qualidade, desempenho, segur
 <br></br>
 
 ---
-## 5. Arquitetura do Projeto
+## 6. Arquitetura do Projeto
 
 O backend foi baseado na arquitetura MVC (Model-View-Controller) e adaptado para uma API RESTful em Node.js:
 
@@ -278,7 +317,7 @@ Banco em memória garante testes limpos e independentes
 ---
 
 
-## 6. Instalação e Execução
+## 7. Instalação e Execução
 
 Antes de começar, certifique-se de ter instalado:
 
@@ -338,7 +377,7 @@ Obs: O servidor será iniciado em http://localhost:3000
 
 ---
 
-## 7. Testando os Endpoints Principais
+## 8. Testando os Endpoints Principais
 
 Você pode testar a API utilizando ferramentas como **Postman** / **Insomnia ou similares** 
 
@@ -596,7 +635,7 @@ Exemplo:
 <br>
 
 ---
-## 8. Integração com API de Clima
+## 9. Integração com API de Clima
 
 A API está integrada ao serviço **OpenWeather**, permitindo consultar o clima atual de qualquer cidade informada.
 
@@ -612,7 +651,7 @@ GET /api/clima?cidade=Fortaleza
 
 ---
 
-## 9. Validações
+## 10. Validações
 
 A API realiza validações nos dados enviados para garantir integridade, segurança e consistência. Abaixo estão as principais regras aplicadas:
 
@@ -643,7 +682,7 @@ A API realiza validações nos dados enviados para garantir integridade, seguran
 
 ---
 
-## 10. Respostas da API
+## 11. Respostas da API
 
 A API retorna mensagens claras para facilitar o consumo e o tratamento de erros. Abaixo estão alguns exemplos de respostas que podem ser esperadas:
 
@@ -816,7 +855,7 @@ Ex:
 ---
 
 
-## 11. Equipe e Distribuição de Responsabilidades
+## 12. Equipe e Distribuição de Responsabilidades
 
 O desenvolvimento da API ConectaBairro foi realizado por uma equipe composta por seis integrantes, com atuação colaborativa e responsabilidades bem definidas. Cada membro ficou responsável por partes específicas do projeto, garantindo clareza nos commits e organização no repositório.
 
@@ -913,7 +952,7 @@ O desenvolvimento da API ConectaBairro foi realizado por uma equipe composta por
 ---
 
 
-## 12. Contribuindo
+## 13. Contribuindo
 
 Contribuições são bem-vindas! Para colaborar com o projeto:
 
@@ -926,7 +965,7 @@ Sinta-se à vontade para abrir issues com sugestões ou melhorias!
 
 ---
 
-## 13. Licença
+## 14. Licença
 
 Este projeto está licenciado sob os termos da [MIT License](LICENSE).
 
