@@ -225,97 +225,24 @@ EMPREENDIMENTOSAPI/
 
 ## Explicação da Arquitetura da API 
 
-Essa arquitetura segue uma abordagem modular e escalável, ideal para aplicações REST modernas. 
+A arquitetura da API ConectaBairro foi pensada para ser modular, escalável e fácil de manter. Ela segue o padrão MVC (Model-View-Controller), adaptado para uma aplicação RESTful construída com Node.js e Express. Cada camada tem uma função bem definida, o que facilita tanto o desenvolvimento quanto a leitura do código por outros membros da equipe.
+
+O ponto de entrada da aplicação é o arquivo server.js, que inicializa o servidor Express, carrega as variáveis de ambiente e conecta ao banco de dados MongoDB Atlas. A partir daí, o Express direciona as requisições para as rotas definidas na pasta routes, que por sua vez encaminham para os controllers responsáveis pela lógica de negócio.
+
+Os controllers estão organizados por domínio: usuários, empreendimentos, clima e CEP. Eles recebem os dados da requisição, validam, processam e, quando necessário, interagem com os services ou com os models. Os services encapsulam a lógica de integração com APIs externas — como a ViaCEP e a OpenWeatherMap — garantindo que essa comunicação fique isolada e reutilizável. Já os models, definidos com Mongoose, representam os esquemas de dados que serão persistidos no MongoDB.
+
+Para proteger rotas sensíveis, como cadastro e edição de empreendimentos, a API utiliza um middleware de autenticação com JWT. Esse middleware verifica se o token enviado pelo usuário é válido e injeta as informações do usuário na requisição, permitindo que o controller saiba quem está fazendo a chamada.
+
+Nos testes, foi adotado o uso do MongoMemoryServer, que permite simular o banco de dados em memória e garantir que os testes sejam executados de forma isolada e confiável. O Jest e o Supertest foram utilizados para validar o fluxo completo da API, desde o cadastro de usuários até a exclusão de empreendimentos.
+
+O diagrama abaixo resume visualmente esse fluxo, mostrando como cada componente se conecta e contribui para o funcionamento da API.
+
 
 ## 📌 Diagrama da arquitetura
 
-<img src="docs/img/diagramaAPI.png" alt="Diagrama" width="550">
-
-<br> 
-
-<b>Aqui está o detalhamento de cada parte:</b>
-
-#### 1 - Cliente/API
-
-🔹 Representa qualquer consumidor da API — pode ser um frontend web, aplicativo mobile ou ferramentas como Postman. Eles enviam requisições HTTP para os endpoints da API.
-
-#### 2 - Express Server (server.js)
-
-🔹 É o ponto de entrada da aplicação. Inicializa o servidor Express, carrega variáveis de ambiente, conecta ao banco de dados (exceto em testes), e define as rotas da API.
-
-#### 3 - Rotas (routes/)
-
-🔹 Cada rota define os caminhos da API e delega a lógica para os controllers correspondentes:
-
-```
-/usuarios → Cadastro e login de usuários
-
-/empreendimentos → CRUD de empreendimentos (com autenticação)
-
-/externo/cep → Busca de empreendimentos por CEP via ViaCEP
-
-/api/clima → Consulta de clima via OpenWeather
-```
-
-#### 4 - Controllers (controllers/)
-
-🔹 Contêm a lógica de negócio:
-
-```
-usuariosController.js: Cadastro e login com JWT
-
-empreendimentosController.js: Listagem, criação, edição e exclusão de empreendimentos
-
-cepController.js: Integração com ViaCEP
-
-climaController.js: Integração com OpenWeather
-```
-
-#### 5 - Middleware (middleware/)
-
-🔹 authMiddleware.js: Protege rotas sensíveis usando JWT. Verifica se o token é válido e injeta o usuário na requisição.
-
-#### 6 - Services (services/)
-
-🔹 viaCepService.js: Abstrai a chamada à API ViaCEP, retornando dados de endereço a partir de um CEP.
-🔹 climaService.js: Abstrai a chamada à API OpenWeatherMap, retornando dados climáticos de uma cidade.
-
-#### 7 - Models (models/)
-
-🔹 Definem os esquemas do MongoDB:
-
-```
-Usuario.js: Contém nome, email e senha (criptografada)
-
-Empreendimento.js: Contém dados do empreendimento e campos normalizados para facilitar buscas
-```
-
-#### 8 - Banco de Dados
-
-🔹 MongoDB é usado como banco principal:
-
-```
-Produção: MongoDB Atlas
-
-Testes: MongoMemoryServer (banco em memória para testes isolados)
-```
-
-#### 9 - Testes Automatizados (test/)
-
-🔹 Utilizam Jest + Supertest para validar o fluxo completo:
-
-```
-Cadastro e login de usuários
-
-CRUD de empreendimentos
-
-Proteção de rotas
-
-Banco em memória garante testes limpos e independentes
-```
+<img width="2170" height="800" alt="diagrama_arquitetura_api" src="https://github.com/user-attachments/assets/49e9e5cc-bfd5-420a-a1c9-c8a53bf52dc1" />
 
 ---
-
 
 ## 7. Instalação e Execução
 
