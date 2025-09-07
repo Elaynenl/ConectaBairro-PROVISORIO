@@ -225,7 +225,7 @@ EMPREENDIMENTOSAPI/
 
 ## Explicação da Arquitetura da API 
 
-A arquitetura da API ConectaBairro foi pensada para ser modular, escalável e fácil de manter. Ela segue o padrão MVC (Model-View-Controller), adaptado para uma aplicação RESTful construída com Node.js e Express. Cada camada tem uma função bem definida, o que facilita tanto o desenvolvimento quanto a leitura do código por outros membros da equipe.
+A arquitetura da API ConectaBairro foi pensada para ser modular, escalável e fácil de manter. Ela segue o padrão MVC (Model-View-Controller), adaptado para uma aplicação RESTful construída com Node.js e Express. Cada camada tem uma função bem definida, para facilitar tanto o desenvolvimento quanto a leitura do código por outros membros da equipe ou a quem interessar.
 
 O ponto de entrada da aplicação é o arquivo server.js, que inicializa o servidor Express, carrega as variáveis de ambiente e conecta ao banco de dados MongoDB Atlas. A partir daí, o Express direciona as requisições para as rotas definidas na pasta routes, que por sua vez encaminham para os controllers responsáveis pela lógica de negócio.
 
