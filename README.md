@@ -258,8 +258,8 @@ Siga os passos abaixo para instalar e rodar o projeto localmente:
 ### Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/conectabairro.git
-cd conectabairro 
+git clone https://github.com/Elaynenl/ConectaBairro.git
+cd ConectaBairro 
 ```
 ### Instale as dependências
 
@@ -268,7 +268,7 @@ npm install
 ```
 ### Configure as variáveis de ambiente 
 
-Crie um arquivo .env na raiz do projeto com base no arquivo .env.example já incluído no repositório. Ele contém todas as variáveis necessárias para rodar o projeto.
+Crie um arquivo .env na raiz do projeto com base no arquivo .env.example já incluído no repositório. 
 
 ```bash
 cp .env.example .env
@@ -888,7 +888,7 @@ Contribuições são bem-vindas! Para colaborar com o projeto:
 3. Faça suas alterações e commit: `git commit -m 'Minha contribuição'`
 4. Envie um pull request
 
-Sinta-se à vontade para abrir issues com sugestões ou melhorias!
+Sinta-se à vontade para abrir issues com sugestões, dúvidas ou melhorias. Toda contribuição é valiosa!
 
 ---
 
